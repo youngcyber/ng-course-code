@@ -1,0 +1,11 @@
+<h3>Employee Detail</h3>
+
+Employee ID: {{ id }}
+
+{{ query }}
+
+<p ng-repeat="e in employees | filter: query">
+	Name: {{ e.first_name + ' ' + e.last_name }}
+	<br>
+	Gender: {{ e.gender }}
+</p>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>AngularJS - Course</title>
+</head>
+<body>
+	<h3>ng-course</h3>
+
+	<div ng-controller="ListController">
+		<input type="button" value="Refresh" ng-click="listEmployees()">
+		<p></p>
+		<div ng-repeat="e in employees">
+			<p ng-bind="e.emp_no + ': ' + e.first_name + ' ' + e.last_name"></p>
+		</div>
+	</div>
+
+	<hr>
+
+	<div ng-controller="ShowController">
+		Employee #: <input type="text" ng-model="emp_no">
+		<br>
+		<input type="button" ng-click="showEmployee()" value="Show Employee">
+		<p>{{ employee.emp_no + ' ' + employee.first_name + ' ' + employee.last_name }}</p>
+	</div>
+
+	<hr>
+
+	<div ng-controller="CreateController">
+		Employee:
+		<input type="text" ng-model="employee.emp_no" placeholder="Employee #">
+		<input type="text" ng-model="employee.first_name" placeholder="First Name">
+		<input type="text" ng-model="employee.last_name" placeholder="Last Name">
+		<br>
+		<input type="button" ng-click="createEmployee()" value="Create">
+	</div>
+
+	<hr>
+
+	<div ng-controller="DeleteController">
+		Employee #: <input type="text" ng-model="emp_no">
+		<br>
+		<input type="button" ng-click="deleteEmployee()" value="Delete">
+	</div>
+
+	<hr>
+
+	<div ng-controller="UpdateController">
+		Old Employee #: <input type="text" ng-model="old_emp_no">
+		<br>
+		Employee:
+		<input type="text" ng-model="employee.emp_no" placeholder="Employee #">
+		<input type="text" ng-model="employee.first_name" placeholder="First Name">
+		<input type="text" ng-model="employee.last_name" placeholder="Last Name">
+		<br>
+		<input type="button" ng-click="updateEmployee()" value="Update">
+	</div>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-resource.min.js"></script>
+	<script src="app/08/app.js"></script>
+</body>
+</html>

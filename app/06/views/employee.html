@@ -1,0 +1,8 @@
+<h3>Employee</h3>
+
+<input type="text" ng-model="query">
+<p ng-repeat="e in employees | filter: query">
+	<a href="#/employee/{{e.emp_no}}">
+		{{ $index+1 + '. ' + e.first_name + ' ' + e.last_name }}
+	</a>
+</p>
