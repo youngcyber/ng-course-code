@@ -1,9 +1,7 @@
 <h3>Employee</h3>
 
-<div ng-controller="EmployeeController">
-	<p ng-repeat="e in employees">
-		<a href="#/employee/{{e.emp_no}}">{{ e.emp_no }}</a>
-		{{ e.first_name + ' ' + e.last_name }}
-		<input type="button" value="Delete" ng-click="deleteEmployee(e.emp_no)">
-	</p>
-</div>
+<p ng-repeat="e in employees">
+	<a href="#/employee/{{e.emp_no}}">{{ e.emp_no }}</a>
+	{{ e.first_name + ' ' + e.last_name }}
+	<input type="button" value="Delete" ng-click="deleteEmployee(e.emp_no)">
+</p>
